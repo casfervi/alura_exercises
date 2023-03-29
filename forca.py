@@ -10,12 +10,12 @@ def jogar():
 
     #numero_tentativas = int(input("Voce quer quantas tentativas pra  tentar acertar a palavra secreta? "))
     numero_tentativas = 7
+    letras_chutadas = []
 
     enforcou = False
     erros = 0
 
     while(not enforcou):
-
         chute = input("Qual a letra? ").upper().strip()
 
         if(chute in palavra_secreta):
@@ -31,18 +31,21 @@ def jogar():
             else:
                 imprime_mensagem_vencedor()
                 break
+        elif(chute in letras_chutadas):
+            print("Voce ja' tentou a letra {}. Tente outra letra.".format(chute))
         else:
             erros += 1
             desenha_forca(erros)
             enforcou = erros == numero_tentativas
+            letras_chutadas.append(chute)
             if(enforcou):
                 imprime_mensagem_perdedor(palavra_secreta)
             elif(erros == numero_tentativas-1):
-                print("Nao tem essa letra na palavra secreta.")
+                print("Nao tem a letra {} na palavra secreta.".format(chute))
                 print("Voce ainda tem {} tentativa.".format(numero_tentativas - erros))
                 print(letras_acertadas)
             else:
-                print("Nao tem essa letra na palavra secreta.")
+                print("Nao tem a letra {} na palavra secreta.".format(chute))
                 print("Voce ainda tem {} tentativas.".format(numero_tentativas - erros))
                 print(letras_acertadas)
 
