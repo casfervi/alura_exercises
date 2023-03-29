@@ -95,18 +95,18 @@ import random
 
 def jogar():
 
-    print("**************************************")
-    print('Ola. Bem vindo ao jogo de advinhacao!')
-    print("**************************************")
+    print("*******************************************")
+    print('** Ola. Bem vindo ao jogo de advinhacao! **')
+    print("*******************************************")
 
     print("Qual o nivel de dificuldade?")
     print("(0) Muito facil \n(1) Facil \n(2) Medio \n(3) Dificil ")
     nivel = int(input("Defide o nivel: "))
 
     if(nivel==0):
-        total_de_tentativas = 30
-    elif(nivel==1):
         total_de_tentativas = 20
+    elif(nivel==1):
+        total_de_tentativas = 15
     elif(nivel==2):
         total_de_tentativas = 10
     else:
@@ -145,7 +145,7 @@ def jogar():
     #print("Precione C para uma nova tentantiva ou Q para parar o jogo.")
 
     print("**************************************")
-    print("Fim do jogo.")
+    print("***********  Fim do jogo.  ***********")
     print("**************************************")
 
 if(__name__ == "__main__"):
